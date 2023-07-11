@@ -2,7 +2,7 @@
   <div class="search">
     <svg
       class="search__icon"
-      @click="$emit('search')"
+      @click="$emit('search', user)"
     >
       <use :xlink:href="`${iconsSprite}#search`"></use>
     </svg>
@@ -11,7 +11,7 @@
       class="search__input"
       type="text"
       placeholder="Find a repository..."
-      @keydown.enter="$emit('search')">
+      @input="$emit('search', user)">
   </div>
 </template>
 

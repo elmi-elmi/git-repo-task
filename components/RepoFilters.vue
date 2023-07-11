@@ -6,9 +6,9 @@
 
     <span class="filters__label">Filter</span>
 
-    <BaseBadge :type="filter === 'all'? 'selected': 'simple'"  @click.native="$emit('filter', 'all') ">All</BaseBadge>
-    <BaseBadge :type="filter === 'public'? 'selected': 'simple'" @click.native="$emit('filter', 'public') ">Public</BaseBadge>
-    <BaseBadge :type="filter === 'private'? 'selected': 'simple'" @click.native="$emit('filter', 'private') ">Private</BaseBadge>
+    <BaseBadge  :type="filter === 'all'? 'selected': 'simple'"  @click.native="$emit('filter', 'all') ">All</BaseBadge>
+    <BaseBadge  :type="filter === 'public'? 'selected': 'simple'" @click.native="$emit('filter', 'public') ">Public</BaseBadge>
+    <BaseBadge  :type="filter === 'private'? 'selected': 'simple'" @click.native="$emit('filter', 'private') ">Private</BaseBadge>
   </div>
 </template>
 
@@ -24,6 +24,9 @@ export  default  {
     filter: {
       type: String,
       default: 'all'
+    },
+    disabled: {
+      type: Boolean,
     }
   },
 

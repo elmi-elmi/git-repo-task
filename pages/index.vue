@@ -63,11 +63,17 @@ export default {
      *
      * @returns {Object}
      */
-    findUsers(){
-      this.$usersService.getUsers(this.user)
-        .then(res=>{
-          this.results = Object.assign([], res)
-        })
+    async findUsers($event){
+      if(!$event) {
+        this.results = []
+        return
+      }
+      const {data, error} = await this.$usersService.getUsers($event)
+      if(error && error.status !== 404) {
+        this.$nuxt.error({statusCode: error.status, message: 'This is an example for error'})
+      } else {
+        this.results = data
+      }
     },
   }
 

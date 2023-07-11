@@ -1,5 +1,11 @@
 export default $axios => ({
-  getUsers(user) {
-    return $axios.$get(`/users/${user}/repos`)
+  async getUsers(user) {
+    try{
+      const data = await $axios.$get(`/users/${user}/repos`);
+      return {data, error: null}
+
+    }catch (error) {
+      return {data:null, error}
+    }
   }
 })
