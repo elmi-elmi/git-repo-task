@@ -16,13 +16,13 @@ export function  getLastTimeUpdate (time) {
   const days = Math.round(diff / (1000 * 60 * 60 * 24));
   const years = Math.round(diff / (1000 * 60 * 60 * 24 * 365));
   if (years > 0) {
-    return `last updated ${years} year${years > 1 ? "s" : ""}`;
+    return `Last updated ${years} year${years > 1 ? "s" : ""}`;
   } else if (days > 0) {
-    return `last updated ${days} day${days > 1 ? "s" : ""}`;
+    return `Last updated ${days} day${days > 1 ? "s" : ""}`;
   } else if (hours > 0) {
-    return `last updated ${hours} hour${hours > 1 ? "s" : ""}`;
+    return `Last updated ${hours} hour${hours > 1 ? "s" : ""}`;
   } else if (minutes > 0) {
-    return `last updated ${minutes} minute${minutes > 1 ? "s" : ""}`;
+    return `Last updated ${minutes} minute${minutes > 1 ? "s" : ""}`;
   } else {
     return `Last updated just now`;
   }
