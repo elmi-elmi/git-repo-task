@@ -16,6 +16,12 @@
 </template>
 
 <script>
+/**
+ * This is a task for Peekage  for the front-end position
+ * that searches repositories and shows them in a list.
+ *
+ * @author shahrokhelmi@gmail.com
+ */
 import RepoList from "~/components/RepoList.vue";
 import iconsSprite from '~/assets/icons.svg'
 import RepoFilters from "~/components/RepoFilters.vue";
