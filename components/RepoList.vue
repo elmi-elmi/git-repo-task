@@ -5,7 +5,7 @@
       <div class="repo-item__name">
         <div class="flex space-x-0.5 items-center">
           <span class="leading-5">{{item.name}}</span>
-          <svg class="w-4 h-4">
+          <svg class="item-icon">
             <use :xlink:href="`${iconsSprite}#open`"></use>
           </svg>
         </div>
@@ -16,7 +16,7 @@
         <span v-if="item.language" class="text-sm font-medium leading-4">{{item.language}}</span>
         <div class="flex items-center gap-1">
           {{toLocaleString(item.stargazers_count)}}
-          <svg class="w-4 h-4">
+          <svg class="item-icon">
             <use :xlink:href="`${iconsSprite}#stars`"></use>
           </svg>
         </div>
@@ -25,7 +25,7 @@
           <span>
              {{toLocaleString(item.forks_count)}}
           </span>
-          <svg class="w-4 h-4">
+          <svg class="item-icon">
             <use :xlink:href="`${iconsSprite}#flow`"></use>
           </svg>
         </div>
@@ -35,7 +35,7 @@
               {{toLocaleString(item.watchers)}}
           </span>
 
-          <svg class="w-4 h-4">
+          <svg class="item-icon">
             <use :xlink:href="`${iconsSprite}#line`"></use>
           </svg>
         </div>
@@ -110,6 +110,9 @@ export  default  {
 .between-border{
   &:not(:last-child) {
     @apply  border-b border-my-border;
+  }
+  .item-icon {
+    @apply h-[18px] w-[18px];
   }
 }
 </style>
