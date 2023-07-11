@@ -1,5 +1,5 @@
 <template>
-  <span :class="badgeClass">
+  <span class="badge" :class="badgeClass">
         <slot/>
   </span>
 </template>
@@ -7,6 +7,7 @@
 <script >
 export default {
   name: "BaseBadge",
+
   props: {
     type: {
       type: String,
@@ -17,7 +18,13 @@ export default {
       }
     }
   },
+
   computed:{
+    /**
+     * Dynamic badge class
+     *
+     * @return {{[p: string]: boolean}}
+     */
     badgeClass(){
       return {[this.type]: true}
     }
@@ -30,21 +37,25 @@ export default {
 
 <style lang="scss" scoped>
 
-.public {
-  @apply rounded-[24px] bg-public text-public bg-opacity-15 text-sm px-2 py-1 font-bold;
+.badge {
+  @apply rounded-[24px] font-bold leading-4;
 }
 
-.selected {
-  @apply border border-selected  rounded-[24px] bg-selected bg-opacity-15 text-selected text-base px-3 py-[7px] font-bold;
+.public {
+  @apply  bg-public text-public bg-opacity-15 text-sm px-2 py-1 leading-4;
 }
 
 .private {
-  @apply rounded-[24px] bg-private text-private bg-opacity-15 text-sm px-2 py-1 font-bold;
+  @apply  bg-private text-private bg-opacity-15 text-sm px-2 py-1 leading-4;
 
 }
 
+.selected {
+  @apply cursor-pointer border border-selected hover:border-selected hover:text-selected   bg-selected bg-opacity-15 text-selected text-base px-3 py-[7px] leading-4;
+}
+
 .simple {
-  @apply border border-my-border rounded-[24px] bg-white text-my-black text-base px-3 py-[7px] font-bold;
+  @apply cursor-pointer border border-my-border hover:border-selected hover:text-selected  bg-white text-my-black text-base px-3 py-[7px] leading-4;
 }
 
 </style>
